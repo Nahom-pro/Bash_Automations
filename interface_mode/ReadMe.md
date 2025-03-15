@@ -16,4 +16,4 @@
        -> iwconfig wlan0
 
 # Remember:
-  * wlan0 is the common wireless interface name. If your interface name is different from this, change wlan0 to your wireless interface name. Specially parrot user!!! 
+  * wlan0 is the common wireless interface name. If your interface name is different from this, change wlan0 to your wireless interface name. Specially parrot users!!! 
