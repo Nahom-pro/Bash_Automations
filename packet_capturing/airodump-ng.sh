@@ -20,11 +20,12 @@ head -n 10 output-01.csv  # Show first 10 lines of CSV for inspection
 
 # Match the exact column pattern
 while IFS=, read -r BSSID FIRST LAST CHANNEL SPEED PRIVACY CIPHER AUTH POWER BEACONS IV LAN_IP ID_LENGTH ESSID REST; do
-    # Skip header, empty lines, or lines without CHANNEL or ESSID
-    [[ "$BSSID" == "BSSID" || -z "$CHANNEL" || -z "$ESSID" || "$ESSID" =~ ^\s*$ ]] && continue
+    # Skip header, empty lines, or lines without CHANNEL
+    [[ "$BSSID" == "BSSID" || -z "$CHANNEL" || "$ESSID" =~ ^\s*$ ]] && continue
     
-    # Trim leading/trailing whitespace from ESSID
+    # Trim leading/trailing whitespace from ESSID and set to "Hidden" if empty
     ESSID=$(echo "$ESSID" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    [ -z "$ESSID" ] && ESSID="Hidden"
     
     # Debugging: Show what’s being parsed
     echo "Parsed: ESSID='$ESSID', BSSID='$BSSID', CHANNEL='$CHANNEL'"
@@ -32,6 +33,9 @@ while IFS=, read -r BSSID FIRST LAST CHANNEL SPEED PRIVACY CIPHER AUTH POWER BEA
     # Store in array with a custom delimiter (|)
     AP_LIST+=("$ESSID|$BSSID|$CHANNEL")
 done < <(awk '/BSSID,/{flag=1; next} /Station MAC,/{flag=0} flag' output-01.csv | tr -d '\r')
+
+# Delete the CSV file after parsing
+rm output-01.csv
 
 # Check if any APs were found
 if [ ${#AP_LIST[@]} -eq 0 ]; then
