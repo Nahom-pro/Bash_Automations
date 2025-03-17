@@ -14,3 +14,9 @@
         Prompts the user to select an AP by number, with input validation.
     * Output:
         => Assigns the selected AP's details to variables (TARGET_BSSID and TARGET_CHANNEL) for potential use in subsequent scripts or commands.
+# Changes Made:
+    * Handling Hidden Networks:
+        => Added a check after trimming whitespace from ESSID: [ -z "$ESSID" ] && ESSID="Hidden".
+        This ensures that if the ESSID is empty (common for hidden networks), it’s replaced with "Hidden" instead of being left blank.
+    * Deleting the CSV File:
+        => Added rm output-01.csv right after the while loop finishes parsing the file. This ensures the temporary file is removed once its data is extracted.
