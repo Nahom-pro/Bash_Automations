@@ -15,9 +15,6 @@ pkill airodump-ng
 
 # Extract AP details (filtering out stations)
 AP_LIST=()
-echo -e "\nRaw CSV data for debugging:"
-head -n 10 output-01.csv  # Show first 10 lines of CSV for inspection
-
 # Match the exact column pattern
 while IFS=, read -r BSSID FIRST LAST CHANNEL SPEED PRIVACY CIPHER AUTH POWER BEACONS IV LAN_IP ID_LENGTH ESSID REST; do
     # Skip header, empty lines, or lines without CHANNEL
@@ -76,4 +73,4 @@ TARGET_CHANNEL="$SELECTED_CHANNEL"
 
 echo -e "\nAssigned Variables:"
 echo "TARGET_BSSID=$TARGET_BSSID"
-echo "TARGET_CHANNEL=$TARGET_CHANNEL"
+echo "TARGET_CHANNEL=$TARGET_CHANNEL" 
