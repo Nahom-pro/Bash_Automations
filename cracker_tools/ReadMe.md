@@ -1,5 +1,6 @@
 # Best Cracker tools
  * For **john ripper**:
+        `john --format=crypt hash.txt --wordlist=word.txt`
     * Change the hash.txt with your txt file. If you haven't, don't worry follow this steps:
         1. find and copy the hash
         2. create file using `nano hash_container.txt`
@@ -16,3 +17,11 @@
     * Creat wordlist using `crunch`
         eg: `crunch 4 4 1234567890 -o word.txt`,
             `crunch 8 8 -t A%%%@@^@ -o word.txt`
+* For **hashcat**:
+        `hashcat -m 1800 -a 0 hash.txt wordlist.txt`
+    * Apply the above first 2 steps
+    * Based on the hash types look `man hashcat` to identify the format for `-m `
+        eg: `-m 1800` doesn't have mode for yescrypt
+    * Select attack type using `-a `
+        eg: `-a 3`
+    * Apply the above for wordlist
