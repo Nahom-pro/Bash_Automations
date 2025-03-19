@@ -24,4 +24,6 @@
         eg: `-m 1800` doesn't have mode for yescrypt
     * Select attack type using `-a `
         eg: `-a 3`
-    * Apply the above for wordlist
+    * Apply the above for creating the wordlist
+    * you can also apply patterns like 
+       - `hashcat -m 1800 -a 0 hash.txt ?d?l?d?u` during this u specify a length also.
