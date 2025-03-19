@@ -6,10 +6,10 @@
         2. create file using `nano hash_container.txt`
         3. past the hash and enter *ctrl+s* to save then *ctrl+x* to close
     * Analyse the hash type it may be:
-        * MD5 => $1$salt$hashed_value
-        * SHA-256 => $5$salt$hashed_value
-        * SHA-512 => $6$salt$hashed_value
-        * yescrypt => $y$parameters$salt$hashed_value
+        * MD5 => `$1$salt$hashed_value`
+        * SHA-256 => `$5$salt$hashed_value`
+        * SHA-512 => `$6$salt$hashed_value`
+        * yescrypt => `$y$parameters$salt$hashed_value`
         * OR use this tool `hash-identifier`
         * *Remember*: the above hash types are not pure hashes instead they are mixed with salts
     * Based on hash types look `man john` to identify the format for `--format==`
@@ -26,4 +26,5 @@
         eg: `-a 3`
     * Apply the above for creating the wordlist
     * you can also apply patterns like 
-       - `hashcat -m 1800 -a 0 hash.txt ?d?l?d?u` *During this u specify a **length** also.*
+       - `hashcat -m 1800 -a 0 hash.txt ?d?l?d?u`
+       - During this u specify a **length** also.
