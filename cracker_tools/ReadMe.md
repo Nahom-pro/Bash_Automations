@@ -29,4 +29,5 @@
     * Apply the above for creating the wordlist
     * you can also apply patterns like 
        - `hashcat -m 1800 -a 0 hash.txt ?d?l?d?u`
+       - `?d` for digit, `?l` for lower case and `?u` for upper case
        - During this u specify a **length** also.
