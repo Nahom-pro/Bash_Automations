@@ -31,4 +31,4 @@
        - `hashcat -m 1800 -a 0 hash.txt ?d?l?d?u`
        - `?d` for digit, `?l` for lower case and `?u` for upper case
        - During this u specify a **length** also.
-* To find your linux user password hash use `cat /etc/shadow` 
+* To find your's password hash use `cat /etc/shadow` (for linux users) 
