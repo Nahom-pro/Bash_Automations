@@ -31,4 +31,10 @@
        - `hashcat -m 1800 -a 0 hash.txt ?d?l?d?u`
        - `?d` for digit, `?l` for lower case and `?u` for upper case
        - During this u specify a **length** also.
+       
 * To find your's password hash use `cat /etc/shadow` (for linux users) 
+
+# Password Generator
+  - Use **mkpasswd**
+    * `mkpasswd -m sha-512 --salt="yoursalt" "yourpassword"`
+    * change sha-512, yoursalt and yourpassword
