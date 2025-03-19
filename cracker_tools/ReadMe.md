@@ -26,4 +26,4 @@
         eg: `-a 3`
     * Apply the above for creating the wordlist
     * you can also apply patterns like 
-       - `hashcat -m 1800 -a 0 hash.txt ?d?l?d?u` during this u specify a length also.
+       - `hashcat -m 1800 -a 0 hash.txt ?d?l?d?u` *During this u specify a **length** also.*
