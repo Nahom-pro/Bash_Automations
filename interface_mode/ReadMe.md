@@ -4,13 +4,13 @@
  -> To revert to managed mode:
 
    * The same step only changes:
-      * For iwconfig
+      * For iwconfig<br>
           -> sudo iwconfig wlan0 mode managed
-      * For iw
+      * For iw<br>
            -> sudo iw dev wlan0 set type managed
-      * For airmon-ng
-         -> sudo airmon-ng stop wlan0mon 
-         -> sudo systemctl restart NetworkManager
+      * For airmon-ng<br>
+         -> sudo airmon-ng stop wlan0mon <br>
+         -> sudo systemctl restart NetworkManager<br>
                (After reverting to managed mode, you may need to restart network services to reconnect to Wi-Fi networks).
     
     * To check the changes use
