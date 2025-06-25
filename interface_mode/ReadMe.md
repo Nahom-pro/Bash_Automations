@@ -10,7 +10,8 @@
          -> sudo iw dev wlan0 set type managed
       * For airmon-ng
          -> sudo airmon-ng stop wlan0mon 
-         -> sudo systemctl restart NetworkManager (After reverting to managed mode, you may need to restart network services to reconnect to Wi-Fi networks).
+         -> sudo systemctl restart NetworkManager
+            (After reverting to managed mode, you may need to restart network services to reconnect to Wi-Fi networks).
     
     * To check the changes use
        -> iwconfig wlan0
